@@ -1,1 +1,32 @@
-<p>post works!</p>
+<!--<h2>Nature</h2>
+<p>
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr,<br>
+ sed diam nonumy eirmod tempor invidunt ut labore et dolore<br>
+  magna aliquyam erat, sed diam voluptua. At vero eos et accusam <br>
+  et justo duo dolores et ea rebum. Stet clita kasd gubergren,<br>
+   no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+</p>
+<img 
+src="https://media.istockphoto.com/photos/mountain-landscape-picture-id517188688?k=20&m=517188688&s=612x612&w=0&h=i38qBm2P-6V4vZVEaMy_TaTEaoCMkYhvLCysE7yJQ5Q="
+class="img-responsive" 
+/> --makes the image responsive
+
+<p>Auther: test@test.com</p>
+<p>Date: 1 Jan 2021</p>
+<button>Edit</button> | <button> Delete</button>-->
+<!--Das Fragezeichen dient dazu Null-Werte zu berücksichtigen. Das heißt es kann
+sein das wir auch keinen Wert geliefert bekommen-->
+<h2>{{post?.title}}</h2>
+   <p>
+      {{post?.description}}
+   </p>
+      
+      <img 
+      src="{{post?.imagePath}}"
+      class="img-responsive" 
+      /> 
+      <!--makes the image responsive -->
+      
+      <p>Auther: {{post?.auther}}</p>
+      <p>Date: {{post?.datetimeCreated}}</p>
+      <button>Edit</button> | <button> Delete</button>
