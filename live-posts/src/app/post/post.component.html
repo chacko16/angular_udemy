@@ -29,4 +29,6 @@ sein das wir auch keinen Wert geliefert bekommen-->
       
       <p>Auther: {{post?.auther}}</p>
       <p>Date: {{post?.datetimeCreated}}</p>
-      <button>Edit</button> | <button> Delete</button>
+      <!--btn-success und btn-danger sind bootstrap klassen-->
+      <button class="btn btn-success" (click)="onEdit()">Edit</button> | 
+      <button class="btn btn-danger" (click)="onDelete()"> Delete</button>

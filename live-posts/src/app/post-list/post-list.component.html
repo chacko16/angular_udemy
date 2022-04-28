@@ -1,5 +1,11 @@
 <h1>Latest posts...</h1>
 <!--Hier senden wir die Daten an Post component-->
-<app-post [post]="listOfPosts[0]"> </app-post>
+<!-- <app-post [post]="listOfPosts[0]"> </app-post>
 <app-post [post]="listOfPosts[1]"> </app-post>
-<app-post [post]="listOfPosts[2]"> </app-post>
+<app-post [post]="listOfPosts[2]"> </app-post> -->
+
+<!--Hier senden wir die Daten die wir dann mit @INput wieder empfangen-->
+<app-post *ngFor="let post of listOfPosts; let i = index"
+[post]="post"
+[index] = i
+></app-post>

@@ -4,7 +4,11 @@
         <div class="col-md-6"><!--die Div COntainer regeln, dass in dem Component
         Post-list die Posts linksbündig und mit Seitenabstand angezeigt werden. Das
          dient rein der Formatierung-->
-            <app-post-list></app-post-list>
+           <!-- <app-post-edit></app-post-edit> -->
+           <!--Router-outlet bindet jetzt die verschiedenen beim Routing ein.
+            Das heißt das bewirkt, dass wir beim Ändern der URI auch die jeweiligen
+        Komponenten angezeigt bekommen-->
+           <router-outlet></router-outlet>
         </div>
     </div>
 </div>

@@ -1,0 +1,8 @@
+
+/*ng-invalid bewirkt, dass so lange die Form invalide ist, also keine
+Eingabe hat ein roter Rand um die einzelnen Elemente zu sehen ist. ng-touched ist
+eine css Klasse, welche wir noch zusätzlich hinzugefügt haben, da ansonsten
+die roten Kästen bei Start der Anwendung zu sehen wären, weil noch kein Wert drinnen steht -> invalide */
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+    border: 1px solid red;
+}

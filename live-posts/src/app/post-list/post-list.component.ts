@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../post.model';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-post-list',
@@ -9,7 +10,7 @@ import { Post } from '../post.model';
 export class PostListComponent implements OnInit {
 
   //Erstellung einer Liste von dem Typ Post
-  listOfPosts: Post[] = [
+  /*listOfPosts: Post[] = [
   new Post("Nature",
   "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,sed diam nonumy eirmod tempor invidunt ut labore et doloremagna aliquyam erat, sed diam voluptua. At vero eos et accusamet justo duo dolores et ea rebum. Stet clita kasd gubergren,no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem",
   "https://media.istockphoto.com/photos/mountain-landscape-picture-id517188688?k=20&m=517188688&s=612x612&w=0&h=i38qBm2P-6V4vZVEaMy_TaTEaoCMkYhvLCysE7yJQ5Q=",
@@ -25,10 +26,14 @@ export class PostListComponent implements OnInit {
   "https://paperdoo.de/img/paperdoo-nature-skye.jpg",
   "Auther: test3@test.com",
   new Date())
-  ];
-  constructor() { }
+  ]; */
+  listOfPosts: Post[] = [];
+
+
+  constructor(private postService: PostService) { }
 
   ngOnInit(): void {
+    this.listOfPosts = this.postService.getPosts();
   }
 
 }
