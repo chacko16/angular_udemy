@@ -4,7 +4,8 @@ export class Post {
         public description: string, 
         public imagePath: string, 
         public auther: string,
-        public datetimeCreated: Date)
+        public datetimeCreated: Date,
+        public numberOfLikes: number)
         {}
 }
 //export bedeutet, dass wir die Klasse außerhalb dieses Files benutzen wollen

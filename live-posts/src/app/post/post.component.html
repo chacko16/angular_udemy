@@ -29,6 +29,11 @@ sein das wir auch keinen Wert geliefert bekommen-->
       
       <p>Auther: {{post?.auther}}</p>
       <p>Date: {{post?.datetimeCreated}}</p>
+    <!--  <p>Likes : {{ post?.numberOfLikes }}</p> -->
+      <!--Like button from bootstrap-->
+      <button type="button" (click)="likePost()" class="btn btn-default btn-sm">
+         <span class="glyphicon glyphicon-thumbs-up"></span> Like  ({{ post?.numberOfLikes }})
+      </button> <br><br>
       <!--btn-success und btn-danger sind bootstrap klassen-->
       <button class="btn btn-success" (click)="onEdit()">Edit</button> | 
       <button class="btn btn-danger" (click)="onDelete()"> Delete</button>

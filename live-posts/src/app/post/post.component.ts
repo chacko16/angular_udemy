@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from '../post.model';
 import { PostService } from '../post.service';
 
@@ -17,9 +17,11 @@ export class PostComponent implements OnInit {
   /*senden wir den Index des Postobjekts zu
   */
  /*Wir nutzen in dem Konstruktor den Routerservice um dann beim Klicken auf den Button auf
- eine andere Komponente nämlich post-edit navigieren zu können. */
+ eine andere Komponente nämlich post-edit navigieren zu können. 
+ Dann nutzen wir zusätzlich route um herauszufinden, was hinter localhost:4200 steht, also um die
+ Route herauszufinden.*/
   @Input() index: number = 0;
-  constructor(private postService: PostService, private router: Router) { }
+  constructor(private postService: PostService, private router: Router, private route: ActivatedRoute) { }
 
   /*
 #angular. Input ( @Input() ) is one of the most
@@ -43,7 +45,14 @@ export class PostComponent implements OnInit {
   onEdit()
   {
     console.log("onEdit() called");
+    //Mit dem index wissen wir jetzt genau anhand der URL welches
+    //Bild nun im post-edit dann editiert werden soll
     this.router.navigate(['/post-edit', this.index])
+  }
+
+  likePost() {
+    this.postService.likePost(this.index);
+console.log("likePost() called");
   }
 
 }
